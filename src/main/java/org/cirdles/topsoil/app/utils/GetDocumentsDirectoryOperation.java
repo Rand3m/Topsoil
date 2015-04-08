@@ -29,7 +29,7 @@ public class GetDocumentsDirectoryOperation extends PlatformDependentOperation<S
     protected Path performOnWindows(String... params) {
 
 
-        return getPath(params);
+        return getPath( params);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class GetDocumentsDirectoryOperation extends PlatformDependentOperation<S
      * @returns A path object representing the directory.
      */
 
-    private getPath(String... params){
+    private Path getPath(String... params){
 
         if (params.length == 1 && !"".equals(params[0])) {
             return Paths.get(System.getProperty("user.home"), "Documents", params[0]);
