@@ -27,18 +27,28 @@ public class GetDocumentsDirectoryOperation extends PlatformDependentOperation<S
 
     @Override
     protected Path performOnWindows(String... params) {
-        return getPath(String...Params);
+
+
+        return getPath(params);
     }
 
     @Override
     protected Path performOnMacOS(String... params) {
-        return getPath(String...Params);
+
+        return getPath(params);
     }
 
     @Override
     protected Path performOnLinux(String... params) {
-        return getPath(String...Params);
+
+        return getPath(params);
     }
+    
+    /**
+     * 
+     * @param params  The folders within the users documents.
+     * @returns A path object representing the directory.
+     */
 
     private getPath(String... params){
 
@@ -48,4 +58,6 @@ public class GetDocumentsDirectoryOperation extends PlatformDependentOperation<S
             return Paths.get(System.getProperty("user.home"), "Documents");
         }
     }
+
 }
+
